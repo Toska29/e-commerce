@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2022-02-02T12:54:09.369Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="sngXdkuowH26dwCJTxiv" version="16.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-02T12:58:28.662Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="hUK1ELtTxXS1GWIG7Yw_" version="16.5.2" type="github">
   <diagram id="QE8ZygkHNEQRnmMVXP5Q" name="use-case diagram">
     <mxGraphModel dx="1102" dy="621" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="g7Fss_hkzkmo4-vFVarL-1" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="230" y="310" width="35" height="50" as="geometry" />
+          <mxGeometry x="300" y="370" width="35" height="50" as="geometry" />
         </mxCell>
         <mxCell id="g7Fss_hkzkmo4-vFVarL-3" value="update products" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="140" y="160" width="120" height="80" as="geometry" />
@@ -61,6 +61,52 @@
         </mxCell>
         <mxCell id="g7Fss_hkzkmo4-vFVarL-22" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=default;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="730" y="80" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g7Fss_hkzkmo4-vFVarL-25" value="" style="endArrow=none;html=1;rounded=0;entryX=0.25;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="g7Fss_hkzkmo4-vFVarL-22" target="g7Fss_hkzkmo4-vFVarL-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="740" y="280" as="sourcePoint" />
+            <mxPoint x="590" y="250" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="720" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g7Fss_hkzkmo4-vFVarL-26" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="g7Fss_hkzkmo4-vFVarL-9" target="g7Fss_hkzkmo4-vFVarL-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="300" as="sourcePoint" />
+            <mxPoint x="590" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g7Fss_hkzkmo4-vFVarL-27" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="g7Fss_hkzkmo4-vFVarL-12" target="g7Fss_hkzkmo4-vFVarL-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="300" as="sourcePoint" />
+            <mxPoint x="590" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g7Fss_hkzkmo4-vFVarL-29" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="g7Fss_hkzkmo4-vFVarL-1" target="g7Fss_hkzkmo4-vFVarL-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="300" as="sourcePoint" />
+            <mxPoint x="590" y="250" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="290" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g7Fss_hkzkmo4-vFVarL-31" value="" style="endArrow=none;html=1;rounded=0;exitX=0.75;exitY=0.1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="g7Fss_hkzkmo4-vFVarL-1" target="g7Fss_hkzkmo4-vFVarL-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="539" y="300" as="sourcePoint" />
+            <mxPoint x="509" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="310" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g7Fss_hkzkmo4-vFVarL-32" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" target="g7Fss_hkzkmo4-vFVarL-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="370" as="sourcePoint" />
+            <mxPoint x="590" y="250" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
