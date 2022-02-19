@@ -30,6 +30,8 @@ public class Item {
     public void addQuantity(Integer quantityAdded){
         if(quantityAdded <= product.getQuantity()){
             this.quantityAdded = quantityAdded;
+        }else {
+            this.quantityAdded = 0;
         }
     }
 }
