@@ -22,10 +22,10 @@ public class Cart {
     @CreationTimestamp
     private LocalDateTime createAt;
 
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Item> items;
 
-    @Transient
+
     private double totalPrice;
 
     public void addItem(Item item){
@@ -33,6 +33,5 @@ public class Cart {
 
         items.add(item);
     }
-
 
 }
