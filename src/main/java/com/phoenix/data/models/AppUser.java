@@ -31,6 +31,7 @@ public class AppUser {
 
     public AppUser(){
         myCart = new Cart();
+        myCart.setTotalPrice(0.0);
     }
 
 }
