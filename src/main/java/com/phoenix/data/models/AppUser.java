@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,8 +17,16 @@ public class AppUser {
     private String firstName;
     private String lastName;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
+
+    @Column(nullable = false)
+    private String password;
+
+    private boolean enable;
+
+    @ElementCollection(fetch = FetchType.LAZY)
+    private List<Authority> authorities;
 
     @Column(length = 500)
     private String address;
