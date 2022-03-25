@@ -33,6 +33,7 @@ class AppUserRepositoryTest {
         appUser.setAddress("Sabo");
         appUser.setFirstName("Toska");
         appUser.setLastName("Emma");
+        appUser.setPassword("word");
 
         //save user in db
         appUserRepository.save(appUser);
