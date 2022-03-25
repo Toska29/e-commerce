@@ -11,15 +11,15 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -55,15 +55,14 @@ class ProductRestControllerTest {
     @Test
     @DisplayName("create a product api test")
     void createProductTest() throws Exception {
-        Product product = new Product();
-        product.setName("Bamboo Chair");
-        product.setDescription("world bamboo product");
-        product.setPrice(7000);
-        product.setQuantity(9);
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.post("/api/products")
+                .param("name", "Bamboo chair")
+                        .param("description", "The great Bamboo")
+                        .param("quantity", "5");
 
-        String requestBody = objectMapper.writeValueAsString(product);
-        mockMvc.perform(post("/api/product/newproducts")
-                        .contentType("application/json").content(requestBody))
+
+        mockMvc.perform(request.contentType("multipart/form-data"))
                 .andExpect(status().is(200))
                 .andDo(print());
     }
