@@ -43,4 +43,15 @@ class CartTest {
         assertThat(cart.getItems().get(0).getProduct()).isNotNull();
         log.info("The object saved :: {}", cart);
     }
+
+    @Test
+    @DisplayName("View all item in a cart")
+    void viewItemsInCartTest(){
+        //get a cart by id
+        Cart savedCart = cartRepository.findById(345L).orElse(null);
+        assertThat(savedCart).isNotNull();
+        assertThat(savedCart.getItems().size()).isEqualTo(3);
+        //view Items in cart
+        log.info("Cart retrieved from DB :: {}", savedCart);
+    }
 }
