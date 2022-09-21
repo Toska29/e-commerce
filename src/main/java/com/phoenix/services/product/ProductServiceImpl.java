@@ -1,5 +1,6 @@
 package com.phoenix.services.product;
 
+import com.cloudinary.utils.ObjectUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,18 +9,25 @@ import com.github.fge.jsonpatch.JsonPatchException;
 import com.phoenix.data.dtos.ProductDto;
 import com.phoenix.data.models.Product;
 import com.phoenix.data.repositories.ProductRepository;
+import com.phoenix.services.cloud.CloudService;
 import com.phoenix.web.exceptions.BusinessLogicException;
 import com.phoenix.web.exceptions.ProductDoesNotExistException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService{
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private CloudService cloudService;
 
     @Override
     public List<Product> getAllProducts() {
@@ -49,6 +57,18 @@ public class ProductServiceImpl implements ProductService{
         }
 
         Product product = new Product();
+        try{
+            if(productDto.getImage() != null) {
+                Map<?, ?> uploadResult = cloudService.upload(productDto.getImage().getBytes(), ObjectUtils.asMap(
+                        "public_id", "inventory/" + productDto.getImage().getOriginalFilename(),
+                        "overwrite", true
+                ));
+                product.setImageUrl(uploadResult.get("url").toString());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         product.setName(productDto.getName());
         product.setPrice(productDto.getPrice());
         product.setQuantity(productDto.getQuantity());
