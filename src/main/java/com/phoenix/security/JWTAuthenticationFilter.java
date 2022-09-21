@@ -2,8 +2,6 @@ package com.phoenix.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.fasterxml.jackson.core.exc.StreamReadException;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.phoenix.data.models.AppUser;
 import org.springframework.security.authentication.AuthenticationManager;
